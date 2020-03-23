@@ -17,6 +17,15 @@ app.get('/users', function(req,res){
     })
 })
 
+app.get('/users/:id', function(req,res){
+    console.log(req.params.id)
+    res.json({
+        success: true,
+        message: 'got one user',
+        user: req.params.id
+    })
+})
+
 // access methods used for making a server by including their name afer app
 // app.listen method will start up the server locally on the post 8000
 // base url here is http://localhost:8000
