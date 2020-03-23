@@ -3,6 +3,20 @@
 const express = require('express');
 const app = express();
 
+// Mock JSON data to return 
+const mockUserData=[
+    {name:'Mark'},
+    {name: 'Jill'}
+]
+
+app.get('/users', function(req,res){
+    res.json({
+        success: true,
+        message: 'successfully got users. Nice!',
+        users: MockUserData
+    })
+})
+
 // access methods used for making a server by including their name afer app
 // app.listen method will start up the server locally on the post 8000
 // base url here is http://localhost:8000
